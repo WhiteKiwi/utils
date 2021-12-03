@@ -6,7 +6,7 @@ export type Function1<A, R> = (a: A) => R;
 export type Function0<R> = () => R;
 export type Function<
 	A,
-	B,
+	B = undefined,
 	C = undefined,
 	D = undefined,
 	E = undefined,
@@ -25,7 +25,7 @@ export type Function<
 
 export type AsyncFunction<
 	A,
-	B,
+	B = undefined,
 	C = undefined,
 	D = undefined,
 	E = undefined,
