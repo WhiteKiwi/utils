@@ -1,3 +1,3 @@
 export interface Builder<T> {
-	build(): T;
+	build(...args: any[]): T | Promise<T>;
 }
