@@ -3,6 +3,7 @@ export type Function4<A, B, C, D, R> = (a: A, b: B, c: C, d: D) => R;
 export type Function3<A, B, C, R> = (a: A, b: B, c: C) => R;
 export type Function2<A, B, R> = (a: A, b: B) => R;
 export type Function1<A, R> = (a: A) => R;
+export type Function0<R> = () => R;
 export type Function<
 	A,
 	B,
@@ -14,7 +15,9 @@ export type Function<
 	? E extends undefined
 		? D extends undefined
 			? C extends undefined
-				? Function1<A, B>
+				? B extends undefined
+					? Function0<A>
+					: Function1<A, B>
 				: Function2<A, B, C>
 			: Function3<A, B, C, D>
 		: Function4<A, B, C, D, E>
@@ -31,7 +34,9 @@ export type AsyncFunction<
 	? E extends undefined
 		? D extends undefined
 			? C extends undefined
-				? Function1<A, Promise<B>>
+				? B extends undefined
+					? Function0<Promise<A>>
+					: Function1<A, Promise<B>>
 				: Function2<A, B, Promise<C>>
 			: Function3<A, B, C, Promise<D>>
 		: Function4<A, B, C, D, Promise<E>>
