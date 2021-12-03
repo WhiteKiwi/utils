@@ -1,6 +1,6 @@
 {
 	"name": "@kiwi-lib/utils",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "src/index.ts",
 	"types": "src/index.ts",
 	"repository": "git@github.com:kiwi-lib/utils.git",
